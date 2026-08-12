@@ -105,4 +105,4 @@ Silakan baca [CONTRIBUTING.md](CONTRIBUTING.md) untuk mempelajari alur pengajuan
 ## 📄 Lisensi
 
 Proyek **Nantara-Boot** dirilis di bawah lisensi [MIT License](LICENSE).
-*(Catatan: Utilitas pihak ketiga yang diunduh saat proses build lokal tetap tunduk pada lisensi masing-masing pengembang).*
+*(Catatan: Utilitas pihak ketiga yang diunduh saat proses build lokal tetap tunduk pada lisensi masing-masing pengembang). #CTARTech *
