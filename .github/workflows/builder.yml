@@ -1,0 +1,56 @@
+name: Nantara-Boot CI/CD Builder
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-rust-launcher:
+    name: Build Native Rust Launcher
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Setup Rust Toolchain
+      uses: dtolnay/rust-toolchain@stable
+
+    - name: Cache Cargo Dependencies
+      uses: actions/cache@v3
+      with:
+        path: |
+          ~/.cargo/bin/
+          ~/.cargo/registry/index/
+          ~/.cargo/registry/cache/
+          ~/.cargo/git/db/
+          src/launcher/target/
+        key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+
+    - name: Run Cargo Check
+      working-directory: ./src/launcher
+      run: cargo check --verbose
+
+    - name: Build Standalone Release Binary
+      working-directory: ./src/launcher
+      run: cargo build --release --verbose
+
+    - name: Upload Rust Binary Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: nantara-launcher-x64
+        path: src/launcher/target/release/nantara-launcher.exe
+
+  validate-iso-builder-script:
+    name: Validate PowerShell ISO Builder
+    runs-on: windows-latest
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Run Builder Script Dry-Run
+      shell: powershell
+      run: |
+        .\build\build.ps1 -TargetOS "Win11PE" -Architecture "x64"
