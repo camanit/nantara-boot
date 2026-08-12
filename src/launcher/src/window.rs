@@ -8,7 +8,7 @@ pub fn launch_native_desktop_window() {
 
     let mut found_path: Option<PathBuf> = None;
 
-    // Check Candidate 1: Direct working directory
+    // 1. Check Candidate 1: Direct working directory
     let p1 = PathBuf::from("web/index.html");
     if p1.exists() {
         found_path = Some(p1);
@@ -40,7 +40,7 @@ pub fn launch_native_desktop_window() {
         println!("  -> Target UI Path : {}", file_url.green());
         println!("  -> Window Mode   : Standalone App Window Container");
 
-        // 1. Launch in Standalone App Window mode via Microsoft Edge App Mode
+        // Execute single clean launch (Standalone App Mode without dual collision)
         let _ = Command::new("cmd")
             .args([
                 "/c",
@@ -49,11 +49,6 @@ pub fn launch_native_desktop_window() {
                 &format!("--app={}", file_url),
                 "--window-size=1280,800"
             ])
-            .spawn();
-
-        // 2. Backup Fallback: Open URL directly in default system browser
-        let _ = Command::new("cmd")
-            .args(["/c", "start", "", &file_url])
             .spawn();
 
         println!("{}", "  ✅ Native Desktop Window Launched Successfully!".green().bold());
