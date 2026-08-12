@@ -23,7 +23,7 @@ fn main() {
     println!("  3. 1-Click Smart File Backup (Desktop, Docs, Downloads)");
     println!("  4. 1-Click Windows Password Reset (SAM Database)");
     println!("  5. Exit Nantara Launcher");
-    println!("{}", "--------------------------------------------------".dark_gray());
+    println!("{}", "--------------------------------------------------".dimmed());
 
     print!("{}", "Select option (1-5) [Auto-Exit in PE mode]: ".cyan().bold());
     let _ = io::stdout().flush();

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nantara-Boot Rescue Environment</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="logo-icon">🚀</div>
+                <div class="brand-text">
+                    <h2>Nantara-Boot</h2>
+                    <span class="badge-foss">100% Free & FOSS</span>
+                </div>
+            </div>
+
+            <nav class="nav-menu">
+                <a href="#dashboard" class="nav-item active" data-tab="dashboard">
+                    <span class="icon">📊</span> Dasbor Utama
+                </a>
+                <a href="#diagnostics" class="nav-item" data-tab="diagnostics">
+                    <span class="icon">🩺</span> Auto-Diagnostics
+                </a>
+                <a href="#antivirus" class="nav-item" data-tab="antivirus">
+                    <span class="icon">🦠</span> Offline Antivirus
+                </a>
+                <a href="#rescue" class="nav-item" data-tab="rescue">
+                    <span class="icon">⚡</span> 1-Click Rescue
+                </a>
+                <a href="#tools" class="nav-item" data-tab="tools">
+                    <span class="icon">🧰</span> Utilitas & Tools
+                </a>
+                <a href="#guide" class="nav-item" data-tab="guide">
+                    <span class="icon">📱</span> QR Emergency Guide
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="safety-shield active">
+                    <span class="shield-icon">🛡️</span>
+                    <div class="shield-info">
+                        <span class="shield-title">Read-Only Shield</span>
+                        <span class="shield-status">ACTIVE (Protected)</span>
+                    </div>
+                </div>
+                <div class="kernel-info">
+                    <span>Kernel: Win11PE x64</span>
+                    <span>Engine: Rust Native</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Header -->
+            <header class="top-header">
+                <div class="header-title">
+                    <h1 id="page-title">Dasbor Utama System Rescue</h1>
+                    <p class="subtitle">Peranti Penyelamat Sistem Komputer & Pemulihan Data Offline</p>
+                </div>
+                <div class="header-actions">
+                    <button class="btn btn-outline" id="btn-refresh-sys">
+                        <span class="icon">🔄</span> Refresh Systems
+                    </button>
+                    <button class="btn btn-primary" id="btn-reboot">
+                        <span class="icon">🔌</span> Reboot PC
+                    </button>
+                </div>
+            </header>
+
+            <!-- Dashboard Tab Content -->
+            <section id="tab-dashboard" class="tab-content active">
+                <!-- System Diagnostics Cards Overview -->
+                <div class="metrics-grid">
+                    <div class="card metric-card">
+                        <div class="metric-header">
+                            <span class="metric-icon">🧠</span>
+                            <span class="metric-label">Memory Status (RAM)</span>
+                        </div>
+                        <div class="metric-value" id="ram-usage-text">4.2 GB / 16.0 GB</div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" id="ram-progress" style="width: 26%;"></div>
+                        </div>
+                        <div class="metric-footer">
+                            <span class="status-good">🟢 Normal Usage</span>
+                        </div>
+                    </div>
+
+                    <div class="card metric-card">
+                        <div class="metric-header">
+                            <span class="metric-icon">⚡</span>
+                            <span class="metric-label">Processor (CPU)</span>
+                        </div>
+                        <div class="metric-value" id="cpu-brand-text">Intel Core i7-12700K</div>
+                        <div class="metric-sub text-muted">16 Cores / 24 Threads</div>
+                        <div class="metric-footer">
+                            <span class="status-good">🟢 Temp: 42°C</span>
+                        </div>
+                    </div>
+
+                    <div class="card metric-card">
+                        <div class="metric-header">
+                            <span class="metric-icon">💾</span>
+                            <span class="metric-label">Drive Storage Health</span>
+                        </div>
+                        <div class="metric-value" id="disk-health-text">2 Drives Detected</div>
+                        <div class="metric-sub text-muted">NVMe SSD 512GB (S.M.A.R.T 98%)</div>
+                        <div class="metric-footer">
+                            <span class="status-good">🟢 S.M.A.R.T Health PASSED</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 1-Click Action Hub -->
+                <h3 class="section-title">⚡ 1-Click Rescue Presets</h3>
+                <div class="rescue-grid">
+                    <div class="card action-card highlight-purple" id="card-1click-backup">
+                        <div class="action-icon">📁</div>
+                        <div class="action-details">
+                            <h4>1-Click Smart Backup</h4>
+                            <p>Menyalin folder User Profile (Desktop, Documents, Downloads, Pictures) dari Windows lokal ke drive eksternal secara otomatis.</p>
+                            <button class="btn btn-sm btn-accent mt-3">Jalankan Backup Instan</button>
+                        </div>
+                    </div>
+
+                    <div class="card action-card highlight-blue" id="card-1click-sam">
+                        <div class="action-icon">🔑</div>
+                        <div class="action-details">
+                            <h4>1-Click SAM Password Reset</h4>
+                            <p>Mereset password akun Windows lokal yang lupa tanpa merusak file sistem atau menginstal ulang.</p>
+                            <button class="btn btn-sm btn-accent mt-3">Reset Password Sekarang</button>
+                        </div>
+                    </div>
+
+                    <div class="card action-card highlight-green" id="card-antivirus-scan">
+                        <div class="action-icon">🛡️</div>
+                        <div class="action-details">
+                            <h4>Offline Malware Removal</h4>
+                            <p>Memindai dan membersihkan virus, ransomware, atau rootkit dari Windows lokal yang tidak bisa booting.</p>
+                            <button class="btn btn-sm btn-accent mt-3">Mulai Scan Virus</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Detected Disks Table -->
+                <h3 class="section-title mt-4">💾 Daftar Drive & Partisi Komputer</h3>
+                <div class="card table-card">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Mount</th>
+                                <th>Drive Name</th>
+                                <th>File System</th>
+                                <th>Sisa Kapasitas</th>
+                                <th>Total Kapasitas</th>
+                                <th>Status BitLocker</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody id="disks-table-body">
+                            <tr>
+                                <td><span class="drive-tag">C:</span></td>
+                                <td><strong>Windows_OS (Local SSD)</strong></td>
+                                <td>NTFS</td>
+                                <td>142.5 GB Free</td>
+                                <td>512.0 GB</td>
+                                <td><span class="badge badge-success">UNLOCKED</span></td>
+                                <td><button class="btn btn-xs btn-outline">Buka File</button></td>
+                            </tr>
+                            <tr>
+                                <td><span class="drive-tag">D:</span></td>
+                                <td><strong>Data_Backup (HDD)</strong></td>
+                                <td>NTFS</td>
+                                <td>680.2 GB Free</td>
+                                <td>1000.0 GB</td>
+                                <td><span class="badge badge-secondary">NONE</span></td>
+                                <td><button class="btn btn-xs btn-outline">Buka File</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- QR Code Guide Modal -->
+            <div class="modal-overlay" id="qr-modal">
+                <div class="modal-card">
+                    <div class="modal-header">
+                        <h3>📱 Panduan Darurat QR Code</h3>
+                        <button class="modal-close" id="btn-close-modal">&times;</button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <p>Scan QR Code di bawah menggunakan Kamera Smartphone/HP kamu untuk membuka panduan perbaikan offline & bantuan error code:</p>
+                        <div class="qr-placeholder mt-3">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://github.com/camanit/nantara-boot" alt="Nantara QR Rescue Guide" class="qr-img">
+                        </div>
+                        <div class="qr-link mt-3">
+                            <code>https://github.com/camanit/nantara-boot</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

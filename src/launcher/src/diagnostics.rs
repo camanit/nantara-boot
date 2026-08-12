@@ -37,13 +37,13 @@ pub fn run_diagnostics() -> DiagnosticReport {
             "     - [{}] Drive '{}' ({}) - {} GB free / {} GB total",
             mount.yellow().bold(),
             name.cyan(),
-            fs_type.dark_gray(),
+            fs_type.dimmed(),
             available_gb.to_string().green(),
             total_gb.to_string().white()
         );
     }
 
-    println!("{}", "--------------------------------------------------".dark_gray());
+    println!("{}", "--------------------------------------------------".dimmed());
 
     DiagnosticReport {
         total_ram_mb,

@@ -25,7 +25,7 @@ pub fn run_1click_backup(source_drive: &str, target_drive: &str) {
             user_path_str.red()
         );
     }
-    println!("{}", "--------------------------------------------------".dark_gray());
+    println!("{}", "--------------------------------------------------".dimmed());
 }
 
 pub fn run_1click_sam_reset(target_drive: &str) {
@@ -45,5 +45,5 @@ pub fn run_1click_sam_reset(target_drive: &str) {
             target_drive
         );
     }
-    println!("{}", "--------------------------------------------------".dark_gray());
+    println!("{}", "--------------------------------------------------".dimmed());
 }

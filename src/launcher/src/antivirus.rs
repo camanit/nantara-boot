@@ -24,7 +24,7 @@ pub fn check_antivirus_engines() -> Vec<AntivirusEngineInfo> {
         let status_str = if exists {
             "[READY]".green().bold()
         } else {
-            "[NOT INSTALLED / PORTABLE MANDATORY]".dark_gray()
+            "[NOT INSTALLED / PORTABLE MANDATORY]".dimmed()
         };
 
         println!("  - {:<35} : {}", name, status_str);
@@ -36,7 +36,7 @@ pub fn check_antivirus_engines() -> Vec<AntivirusEngineInfo> {
         });
     }
 
-    println!("{}", "--------------------------------------------------".dark_gray());
+    println!("{}", "--------------------------------------------------".dimmed());
     results
 }
 
