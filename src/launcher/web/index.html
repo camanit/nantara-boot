@@ -34,6 +34,9 @@
                 <a href="#rescue" class="nav-item" data-tab="rescue">
                     <span class="icon">⚡</span> 1-Click Rescue
                 </a>
+                <a href="#ai" class="nav-item" data-tab="ai">
+                    <span class="icon">🤖</span> Nantara AI Assistant
+                </a>
                 <a href="#tools" class="nav-item" data-tab="tools">
                     <span class="icon">🧰</span> Utilitas & Tools
                 </a>
@@ -75,21 +78,20 @@
                 </div>
             </header>
 
-            <!-- Dashboard Tab Content -->
+            <!-- 1. Dashboard Tab Content -->
             <section id="tab-dashboard" class="tab-content active">
-                <!-- System Diagnostics Cards Overview -->
                 <div class="metrics-grid">
                     <div class="card metric-card">
                         <div class="metric-header">
                             <span class="metric-icon">🧠</span>
                             <span class="metric-label">Memory Status (RAM)</span>
                         </div>
-                        <div class="metric-value" id="ram-usage-text">4.2 GB / 16.0 GB</div>
+                        <div class="metric-value" id="ram-usage-text">5.9 GB / 8.0 GB</div>
                         <div class="progress-bar-container">
-                            <div class="progress-bar" id="ram-progress" style="width: 26%;"></div>
+                            <div class="progress-bar" id="ram-progress" style="width: 73%;"></div>
                         </div>
                         <div class="metric-footer">
-                            <span class="status-good">🟢 Normal Usage</span>
+                            <span class="status-good">🟢 Status Normal</span>
                         </div>
                     </div>
 
@@ -98,27 +100,26 @@
                             <span class="metric-icon">⚡</span>
                             <span class="metric-label">Processor (CPU)</span>
                         </div>
-                        <div class="metric-value" id="cpu-brand-text">Intel Core i7-12700K</div>
-                        <div class="metric-sub text-muted">16 Cores / 24 Threads</div>
+                        <div class="metric-value" id="cpu-brand-text">Intel Core i5 (4 Cores)</div>
+                        <div class="metric-sub text-muted">2.67GHz Base Clock</div>
                         <div class="metric-footer">
-                            <span class="status-good">🟢 Temp: 42°C</span>
+                            <span class="status-good">🟢 Temp: 42°C (Healthy)</span>
                         </div>
                     </div>
 
                     <div class="card metric-card">
                         <div class="metric-header">
                             <span class="metric-icon">💾</span>
-                            <span class="metric-label">Drive Storage Health</span>
+                            <span class="metric-label">Storage Drive Health</span>
                         </div>
                         <div class="metric-value" id="disk-health-text">2 Drives Detected</div>
-                        <div class="metric-sub text-muted">NVMe SSD 512GB (S.M.A.R.T 98%)</div>
+                        <div class="metric-sub text-muted">C: (280GB) | E: (195GB)</div>
                         <div class="metric-footer">
                             <span class="status-good">🟢 S.M.A.R.T Health PASSED</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- 1-Click Action Hub -->
                 <h3 class="section-title">⚡ 1-Click Rescue Presets</h3>
                 <div class="rescue-grid">
                     <div class="card action-card highlight-purple" id="card-1click-backup">
@@ -149,7 +150,6 @@
                     </div>
                 </div>
 
-                <!-- Detected Disks Table -->
                 <h3 class="section-title mt-4">💾 Daftar Drive & Partisi Komputer</h3>
                 <div class="card table-card">
                     <table class="data-table">
@@ -169,22 +169,154 @@
                                 <td><span class="drive-tag">C:</span></td>
                                 <td><strong>Windows_OS (Local SSD)</strong></td>
                                 <td>NTFS</td>
-                                <td>142.5 GB Free</td>
-                                <td>512.0 GB</td>
+                                <td>13.2 GB Free</td>
+                                <td>280.0 GB</td>
                                 <td><span class="badge badge-success">UNLOCKED</span></td>
                                 <td><button class="btn btn-xs btn-outline">Buka File</button></td>
                             </tr>
                             <tr>
-                                <td><span class="drive-tag">D:</span></td>
-                                <td><strong>Data_Backup (HDD)</strong></td>
+                                <td><span class="drive-tag">E:</span></td>
+                                <td><strong>Data_Volume (HDD)</strong></td>
                                 <td>NTFS</td>
-                                <td>680.2 GB Free</td>
-                                <td>1000.0 GB</td>
+                                <td>51.0 GB Free</td>
+                                <td>195.0 GB</td>
                                 <td><span class="badge badge-secondary">NONE</span></td>
                                 <td><button class="btn btn-xs btn-outline">Buka File</button></td>
                             </tr>
                         </tbody>
                     </table>
+                </div>
+            </section>
+
+            <!-- 2. Auto-Diagnostics Tab Content -->
+            <section id="tab-diagnostics" class="tab-content">
+                <div class="card">
+                    <h3>🩺 Smart Hardware Auto-Diagnostics Report</h3>
+                    <p class="subtitle">Hasil pengujian kondisi fisik hardware dan integritas memori komputer target secara real-time:</p>
+                    
+                    <div class="diag-list mt-4">
+                        <div class="diag-item">
+                            <span class="diag-icon">🟢</span>
+                            <div class="diag-detail">
+                                <strong>RAM Memory Integrity Test (sysinfo Rust)</strong>
+                                <p>5913 MB Terpakai dari Total 8051 MB. Tidak terdeteksi bad block atau memory leaks.</p>
+                            </div>
+                        </div>
+                        <div class="diag-item mt-3">
+                            <span class="diag-icon">🟢</span>
+                            <div class="diag-detail">
+                                <strong>SSD/HDD S.M.A.R.T Status Check</strong>
+                                <p>Drive C: (NTFS 280GB) - Health 98% Good. Reallocated Sectors Count: 0.</p>
+                            </div>
+                        </div>
+                        <div class="diag-item mt-3">
+                            <span class="diag-icon">🟡</span>
+                            <div class="diag-detail">
+                                <strong>BIOS Date & Power Battery Check</strong>
+                                <p>Baterai terdeteksi mengisi (85%). Tanggal sistem sesuai (2026-08-12).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. Offline Antivirus Tab Content -->
+            <section id="tab-antivirus" class="tab-content">
+                <div class="card">
+                    <h3>🦠 Pemindaian Virus & Malware Offline</h3>
+                    <p class="subtitle">Engine pemindai malware terisolasi di lingkungan Live PE:</p>
+
+                    <div class="av-engines-grid mt-4">
+                        <div class="av-box card">
+                            <span class="av-status badge badge-success">READY</span>
+                            <h4>Windows Defender CLI Engine</h4>
+                            <p>Engine pemindai malware offline terintegrasi kernel PE.</p>
+                            <button class="btn btn-sm btn-primary mt-3" id="scan-defender">Mulai Scan Defender</button>
+                        </div>
+
+                        <div class="av-box card">
+                            <span class="av-status badge badge-secondary">PORTABLE</span>
+                            <h4>ClamAV Open Source</h4>
+                            <p>Engine pemindai virus open-source serbaguna.</p>
+                            <button class="btn btn-sm btn-outline mt-3" id="scan-clamav">Mulai Scan ClamAV</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. 1-Click Rescue Tab Content -->
+            <section id="tab-rescue" class="tab-content">
+                <div class="card">
+                    <h3>⚡ 1-Click Rescue Automation Presets</h3>
+                    <p class="subtitle">Alur kerja pemulihan data instan sekali klik tanpa proses rumit:</p>
+                    
+                    <div class="preset-buttons mt-4">
+                        <button class="btn btn-primary" id="btn-preset-backup">📁 Presets 1-Click User Profile Backup</button>
+                        <button class="btn btn-outline" id="btn-preset-sam">🔑 Presets 1-Click Windows SAM Password Reset</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. Nantara AI Assistant Tab Content -->
+            <section id="tab-ai" class="tab-content">
+                <div class="card">
+                    <h3>🤖 Nantara AI Rescue Assistant</h3>
+                    <p class="subtitle">Analisis kode error BSOD & instruksi perbaikan dalam bahasa manusia (Offline SLM + Cloud Hybrid):</p>
+                    
+                    <div class="ai-box mt-4">
+                        <div class="form-group">
+                            <label><strong>Masukkan Kode Error / BSOD (contoh: INACCESSIBLE_BOOT_DEVICE atau 0xC000021A):</strong></label>
+                            <input type="text" id="ai-error-input" class="form-control" value="INACCESSIBLE_BOOT_DEVICE" placeholder="Contoh: 0xC000000E">
+                        </div>
+                        <button class="btn btn-primary mt-3" id="btn-ask-ai">💡 Analisis Solusi AI</button>
+
+                        <div class="ai-response-card card mt-4" id="ai-result-card">
+                            <h4>💡 [Nantara AI Solution]</h4>
+                            <p><strong>Penyebab:</strong> Driver controller NVMe/SATA hilang atau konfigurasi BCD boot corrupt.</p>
+                            <p><strong>Rekomendasi Perbaikan:</strong></p>
+                            <ol>
+                                <li>Buka tab Utilitas -> Jalankan Bootice / EasyBCD untuk repair BCD.</li>
+                                <li>Inject driver Intel VMD / RST NVMe menggunakan DISM++ Tool.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. Tools Category Tab Content -->
+            <section id="tab-tools" class="tab-content">
+                <div class="card">
+                    <h3>🧰 Kategori Utilitas & Tools Portable</h3>
+                    <div class="tools-grid mt-4">
+                        <div class="tool-cat">
+                            <h4>BCD & Boot Repair</h4>
+                            <ul><li>DISM++</li><li>Bootice</li><li>EasyBCD</li></ul>
+                        </div>
+                        <div class="tool-cat">
+                            <h4>Hard Disk & Partisi</h4>
+                            <ul><li>CrystalDiskInfo</li><li>AOMEI Partition Assistant</li><li>Macrorit</li><li>Victoria</li></ul>
+                        </div>
+                        <div class="tool-cat">
+                            <h4>Data Recovery</h4>
+                            <ul><li>Everything Search</li><li>Recuva</li><li>PhotoRec & TestDisk</li></ul>
+                        </div>
+                        <div class="tool-cat">
+                            <h4>Password & Security</h4>
+                            <ul><li>NT Password Edit</li><li>Lazesoft Password Recovery</li></ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 7. QR Emergency Guide Tab Content -->
+            <section id="tab-guide" class="tab-content">
+                <div class="card text-center">
+                    <h3>📱 Panduan Darurat QR Code</h3>
+                    <p class="subtitle">Scan QR Code ini dengan Smartphone/HP kamu untuk membuka panduan perbaikan offline:</p>
+                    <div class="qr-placeholder mt-4">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://github.com/camanit/nantara-boot" alt="QR Guide" class="qr-img">
+                    </div>
+                    <p class="mt-3"><code>https://github.com/camanit/nantara-boot</code></p>
                 </div>
             </section>
 
