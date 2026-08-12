@@ -1,6 +1,17 @@
-# 🚀 Nantara-Boot
+<p align="center">
+  <img src="docs/logo.png" width="220" alt="Nantara-Boot Logo" />
+</p>
 
-> **Nantara-Boot** adalah peranti penyelamat sistem (*System Rescue Live OS / WinPE Toolkit*) modern, ringan, dan serbaguna berbasis *Open Source*. Dirancang untuk teknisi IT, profesional keamanan, dan pengguna umum untuk pemulihan data, perbaikan boot, reset password, diagnosa hardware, serta penanganan insiden komputer secara instan.
+<h1 align="center">🚀 Nantara-Boot</h1>
+
+<p align="center">
+  <strong>System Rescue Live OS / WinPE Toolkit</strong><br>
+  100% Free & Open-Source Software (MIT License) ditenagai oleh bahasa <strong>Rust</strong> & <strong>Nantara AI Assistant</strong>
+</p>
+
+---
+
+> **Nantara-Boot** adalah peranti penyelamat sistem (*System Rescue Live OS / WinPE Toolkit*) modern, ringan, dan serbaguna berbasis *Open Source*. Dirancang untuk teknisi IT, profesional keamanan, dan pengguna umum untuk pemulihan data, perbaikan boot, reset password, pemindaian virus offline, diagnosa hardware, serta penanganan insiden komputer secara instan.
 
 ---
 
