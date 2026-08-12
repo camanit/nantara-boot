@@ -1,6 +1,6 @@
 {
   "projectName": "Nantara-Boot",
-  "version": "1.0.0-dev",
+  "version": "2.0.0-dev",
   "kernel": "Win11PE_x64",
   "buildOptions": {
     "includeDrivers": true,
