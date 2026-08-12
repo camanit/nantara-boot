@@ -17,6 +17,10 @@
 
 ## ✨ Fitur Unggulan (Key Features)
 
+- 🖥️ **Nantara Native Standalone Desktop Window (v2.0 Engine)**:
+  - Antarmuka GUI sekarang berjalan dalam **Jendela Aplikasi Desktop Mandiri** (*Standalone App Window*) tanpa membutuhkan browser bar (Chrome/Edge)!
+- 🤖 **Nantara AI Rescue Assistant Engine**:
+  - Asisten AI penyelamat sistem pertama di dunia pada Live Boot OS! Menganalisis kode error BSOD (`INACCESSIBLE_BOOT_DEVICE`, `0xC000021A`, dll) dalam mode **Offline Local SLM** maupun **Cloud Hybrid**.
 - 🩺 **Smart Hardware Auto-Diagnostics**: Dasbor otomatis saat booting yang memeriksa kesehatan SSD/HDD (S.M.A.R.T), RAM, CPU, dan Baterai.
 - ⚡ **1-Click Rescue Presets**:
   - **Smart Backup:** Menyalin folder `Desktop`, `Documents`, `Downloads`, dan `Pictures` dari Windows lokal ke drive eksternal dalam sekali klik.
@@ -24,7 +28,6 @@
 - 📱 **QR Code Emergency Guide**: Panduan perbaikan offline berbasis QR Code yang bisa di-scan dengan HP saat PC tidak terkoneksi internet.
 - 🛡️ **Read-Only Safety Shield**: Perlindungan integritas data saat pemulihan file agar drive target tidak ter-overwrite.
 - 🌐 **PXE / Network Boot Ready**: Mendukung booting dari jaringan lokal (LAN) tanpa memerlukan flashdisk tambahan.
-- 🎨 **Modern Nantara GUI Launcher**: Antarmuka modern ber-tema gelap (*Dark Mode*) yang responsif dan ramah layar sentuh.
 
 ---
 
