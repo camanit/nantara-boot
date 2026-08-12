@@ -102,6 +102,18 @@ Silakan baca [CONTRIBUTING.md](CONTRIBUTING.md) untuk mempelajari alur pengajuan
 
 ---
 
+## ☕ Dukung & Donasi Pengembang (Support Open Source)
+
+Jika Anda ingin mendukung keberlanjutan pengembangan **Nantara-Boot** (NantaraBoot2026 Open-Source Karya Indonesia), Anda dapat memberikan apresiasi / donasi melalui:
+
+- 🏦 **Bank:** Allo Bank
+- 💳 **No. Rekening:** `081260006666`
+- 💬 **Konfirmasi / WA:** [+62 812-6000-6666](https://wa.me/6281260006666)
+
+*Dukungan Anda sangat berharga untuk biaya infrastruktur server pengujian, lisensi hardware AMD/Intel enclave, serta pengembangan fitur-fitur baru NantaraVM, NantaraOS, NantaraBoot, NantaraEngine dan NantaraPentest.*
+
+---
+
 ## 📄 Lisensi
 
 Proyek **Nantara-Boot** dirilis di bawah lisensi [MIT License](LICENSE).
