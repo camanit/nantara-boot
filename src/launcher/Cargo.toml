@@ -1,0 +1,14 @@
+[package]
+name = "nantara-launcher"
+version = "0.1.0"
+edition = "2021"
+authors = ["camanit"]
+repository = "https://github.com/camanit/nantara-boot"
+description = "System Rescue Launcher & Hardware Diagnostics Engine written in Rust"
+license = "MIT"
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+colored = "2.1"
+sysinfo = "0.30"

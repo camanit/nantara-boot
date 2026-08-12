@@ -1,0 +1,13 @@
+# Rust build target
+/src/launcher/target/
+**/*.rs.bk
+
+# Nantara-Boot ISO Out
+/build/out/
+*.iso
+
+# IDE & System files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
