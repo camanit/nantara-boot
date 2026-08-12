@@ -1,5 +1,9 @@
+mod antivirus;
+mod diagnostics;
+mod rescue;
+
 use colored::*;
-use sysinfo::System;
+use std::io::{self, Write};
 
 fn main() {
     println!("{}", "==========================================================".cyan());
@@ -7,25 +11,32 @@ fn main() {
     println!("{}", "   100% Free & Open-Source Software (MIT License)".green());
     println!("{}", "==========================================================".cyan());
 
-    let mut sys = System::new_all();
-    sys.refresh_all();
+    // 1. Run Initial Smart Hardware Auto-Diagnostics
+    let _report = diagnostics::run_diagnostics();
 
-    println!("\n{}", "🩺 [Smart Auto-Diagnostics Initialized]".yellow().bold());
-    println!("  -> Total Memory (RAM) : {} MB", sys.total_memory() / 1024 / 1024);
-    println!("  -> Used Memory  (RAM) : {} MB", sys.used_memory() / 1024 / 1024);
-    println!("  -> CPU Cores Count    : {}", sys.cpus().len());
+    // 2. Check Antivirus Status
+    let _av_engines = antivirus::check_antivirus_engines();
 
-    if let Some(cpu) = sys.cpus().first() {
-        println!("  -> Processor Brand    : {}", cpu.brand().trim());
-    }
+    println!("\n{}", "📋 --- [NANTARA RESCUE CONTROL PANEL] ---".yellow().bold());
+    println!("  1. Run Full Hardware & Storage Scan");
+    println!("  2. Execute Offline Malware & Virus Scan");
+    println!("  3. 1-Click Smart File Backup (Desktop, Docs, Downloads)");
+    println!("  4. 1-Click Windows Password Reset (SAM Database)");
+    println!("  5. Exit Nantara Launcher");
+    println!("{}", "--------------------------------------------------".dark_gray());
 
-    println!("\n{}", "🛡️ [Offline Safety & Security Status]".yellow().bold());
-    println!("  -> Read-Only Protection : ACTIVE (Target drives protected)");
-    println!("  -> Offline Antivirus    : Ready (ClamAV & KVRT Engines)");
-    println!("  -> 1-Click SAM Reset   : Ready");
-    println!("  -> 1-Click Smart Backup : Ready");
+    print!("{}", "Select option (1-5) [Auto-Exit in PE mode]: ".cyan().bold());
+    let _ = io::stdout().flush();
+
+    // Demonstrate interactive CLI / diagnostic preview
+    println!("\n{}", "✨ Nantara Engine is running in Live Diagnostic mode.".green().bold());
+    
+    // Test sample 1-click rescue calls
+    rescue::run_1click_sam_reset("C");
+    rescue::run_1click_backup("C", "D");
+    antivirus::scan_target_drive("C");
 
     println!("\n{}", "==========================================================".cyan());
-    println!("{}", "   System Ready. Launching Nantara Dashboard...".green().bold());
+    println!("{}", "   System Ready. Nantara Rescue Kernel Active.".green().bold());
     println!("{}", "==========================================================".cyan());
 }
